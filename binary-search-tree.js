@@ -78,7 +78,17 @@ class BinarySearchTree {
     }
 
     //Breadth-First Traversal
+    bft() {
+        let queue = new Queue();
 
+        while(queue.size > 0) {
+            let node = queue.dequeue();
+            console.log(node);
+
+            queue.enqueue(node.left);
+            queue.enqueue(node.right);
+        }
+    }
 
     //Breadth-First Search
 }
