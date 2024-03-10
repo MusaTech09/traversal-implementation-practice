@@ -1,11 +1,11 @@
 //Create Graph
 const graph = {
-    A: new Set(['B', 'C', 'E']), //directed B && C; undirected(bidirectional) E
-    B: new Set(['A', 'C']),
-    C: new Set(['B', 'D']),
-    D: new Set([]),
-    E: new Set(['A']), //undirected(bidirectional) edge
-    F: new Set(['E']), //directed edge
+    A: new Set(['B', 'C']),
+    B: new Set(['A', 'D', 'E', 'F']),
+    C: new Set(['A', 'F']),
+    D: new Set(['B']),
+    E: new Set(['B']),
+    F: new Set(['B', 'C']),
 }
 
 //Depth-First Traversal
@@ -68,15 +68,15 @@ const bft = start => {
     let res = ''
 
     while(queue.length) {
-        let node = queue.shift();
-        res += node;
+        let curr = queue.shift();
+        res += curr;
 
-        let neighbors = graph[node];
+        let neighbors = graph[curr];
 
         neighbors.forEach(el => {
-            if(!visited.has(`${node}`)) {
-                visited.add(`${node}`);
-                queue.push(node);
+            if(!visited.has(`${el}`)) {
+                visited.add(`${el}`);
+                queue.push(el);
             }
         })
     }
@@ -97,6 +97,6 @@ const bft = start => {
 // console.log(dfs('A', 'D'));
 // console.log(dfs('B', 'F'));
 
-console.log(bft('B'))
-// console.log(bft('E'))
-// console.log(bft('F'))
+console.log(bft('A'))
+console.log(bft('E'))
+console.log(bft('F'))
