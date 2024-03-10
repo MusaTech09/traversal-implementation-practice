@@ -8,6 +8,13 @@ class TreeNode {
     }
 }
 
+//Binary Search Tree
+
+class BinarySearchTree {
+    constructor() {
+        this.root = null;
+    }
+}
 
 //Creating Nodes
 
