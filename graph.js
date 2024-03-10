@@ -37,7 +37,7 @@ const dft = start => {
     return res;
 }
 
-//Depth-First Traversal
+//Depth-First Search
 const dfs = (start, target) => {
     let stack = [start];
     let visited = new Set([start]);
@@ -58,14 +58,14 @@ const dfs = (start, target) => {
         };
     };
 
-    return false;
+    return `Target '${target}' Not Found`;
 }
 
 //Test Cases
 
-console.log(dft('A'));
-console.log(dft('B'));
-console.log(dft('C'));
-console.log(dft('D'));
-console.log(dft('E'));
-console.log(dft('F'));
+// console.log(dft('A'));
+// console.log(dft('E'));
+// console.log(dft('F'));
+
+console.log(dfs('A', 'D'));
+console.log(dfs('B', 'F'));
