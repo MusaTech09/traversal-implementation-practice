@@ -1,7 +1,7 @@
 //Create Graph
 const graph = {
     A: new Set(['B', 'C', 'E']), //directed B && C; undirected(bidirectional) E
-    B: new Set([]),
+    B: new Set(['A', 'C']),
     C: new Set(['B', 'D']),
     D: new Set([]),
     E: new Set(['A']), //undirected(bidirectional) edge
@@ -62,7 +62,27 @@ const dfs = (start, target) => {
 }
 
 //Breadth-First Treversal
+const bft = start => {
+    let queue = [start];
+    let visited = new Set([start]);
+    let res = ''
 
+    while(queue.length) {
+        let node = queue.shift();
+        res += node;
+
+        let neighbors = graph[node];
+
+        neighbors.forEach(el => {
+            if(!visited.has(`${node}`)) {
+                visited.add(`${node}`);
+                queue.push(node);
+            }
+        })
+    }
+
+    return res;
+}
 
 //Breadth-First Serach
 
@@ -74,5 +94,9 @@ const dfs = (start, target) => {
 // console.log(dft('E'));
 // console.log(dft('F'));
 
-console.log(dfs('A', 'D'));
-console.log(dfs('B', 'F'));
+// console.log(dfs('A', 'D'));
+// console.log(dfs('B', 'F'));
+
+console.log(bft('B'))
+// console.log(bft('E'))
+// console.log(bft('F'))
