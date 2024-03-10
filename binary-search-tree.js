@@ -14,6 +14,15 @@ class BinarySearchTree {
     constructor() {
         this.root = null;
     }
+
+    insert(val, currentNode = this.root) {
+        const newNode = new TreeNode(val);
+
+        if(!this.root) {
+            this.root = newNode;
+            return;
+        }
+    }
 }
 
 //Creating Nodes
@@ -42,4 +51,7 @@ eight.left= six;
 eight.right = nine;
 
 
-module.exports = TreeNode;
+module.exports = {
+    TreeNode,
+    BinarySearchTree
+}
