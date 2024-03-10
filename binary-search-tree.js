@@ -43,7 +43,24 @@ class BinarySearchTree {
             }
         }
     }
+
+    //Depth-First Traversal
+    dft() {
+        let stack = [this.root]; //Put start node in stack
+
+        //While stack not empty
+        while(stack.length) {
+            //Pop node and print
+            let node = stack.pop();
+            console.log(node.val);
+
+            //Put node's children on top of stack
+            if(node.right) stack.push(node.right);
+            if(node.left) stack.push(node.left);
+        }
+    }
 }
+
 
 //Creating Binary Search Tree
 
@@ -65,11 +82,6 @@ bst.insert(9);
 //          \
 //           6
 
-console.log(bst);
-console.log(bst.root.left);
-console.log(bst.root.right);
+//Test Cases
 
-module.exports = {
-    TreeNode,
-    BinarySearchTree
-}
+bst.dft();
