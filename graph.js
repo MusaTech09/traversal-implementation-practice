@@ -37,9 +37,28 @@ const dft = start => {
     return res;
 }
 
-//Breadth-First Traversal
+//Depth-First Traversal
 const dfs = (start, target) => {
+    let stack = [start];
+    let visited = new Set([start]);
 
+    while(stack.length) {
+        let curr = stack.pop();
+
+        if(curr === target) return true;
+        else {
+            let neighbors = graph[curr];
+
+            neighbors.forEach(node => {
+                if(!visited.has(`${node}`)) {
+                    visited.add(`${node}`);
+                    stack.push(node);
+                }
+            });
+        };
+    };
+
+    return false;
 }
 
 //Test Cases
