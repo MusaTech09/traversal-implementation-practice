@@ -1,5 +1,4 @@
 //Create Graph
-
 const graph = {
     A: new Set(['B', 'C', 'E']), //directed B && C; undirected(bidirectional) E
     B: new Set([]),
@@ -10,8 +9,7 @@ const graph = {
 }
 
 //Depth-First Traversal
-
-const depthFirstTraversal = start => {
+const dft = start => {
     //Create stack and push start node
     //Create set to store visited nodes and add start node
     let stack = [start];
@@ -39,11 +37,16 @@ const depthFirstTraversal = start => {
     return res;
 }
 
+//Breadth-First Traversal
+const dfs = (start, target) => {
+
+}
+
 //Test Cases
 
-console.log(depthFirstTraversal('A'));
-console.log(depthFirstTraversal('B'));
-console.log(depthFirstTraversal('C'));
-console.log(depthFirstTraversal('D'));
-console.log(depthFirstTraversal('E'));
-console.log(depthFirstTraversal('F'));
+console.log(dft('A'));
+console.log(dft('B'));
+console.log(dft('C'));
+console.log(dft('D'));
+console.log(dft('E'));
+console.log(dft('F'));
