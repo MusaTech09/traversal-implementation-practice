@@ -28,14 +28,19 @@ class BinarySearchTree {
 
         //Add smaller values to left
         if(val < currNode.val) {
-            if(!currNode.left) currNode.left = newNode;
-            else this.insert(val, currNode.left)
-        }
 
-        //Add larger values to right
-        if(val > currNode.val) {
-            if(!currNode.right) currNode.right = newNode;
-            else this.insert(val, currNode.right);
+            if(!currNode.left) {
+                currNode.left = newNode;
+            } else {
+                this.insert(val, currNode = currNode.left);
+            }
+        } else {
+            //Add larger values to right
+            if(!currNode.right) {
+                currNode.right = newNode;
+            } else {
+                this.insert(val, currNode = currNode.right);
+            }
         }
     }
 }
@@ -43,6 +48,7 @@ class BinarySearchTree {
 //Creating Binary Search Tree
 
 bst = new BinarySearchTree();
+
 bst.insert(7);
 bst.insert(3);
 bst.insert(8);
@@ -51,7 +57,12 @@ bst.insert(4);
 bst.insert(6);
 bst.insert(9);
 
+//          7
+//      3
 
+console.log(bst);
+console.log(bst.root.left);
+console.log(bst.root.right);
 
 module.exports = {
     TreeNode,
