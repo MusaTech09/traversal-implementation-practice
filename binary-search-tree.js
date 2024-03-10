@@ -1,5 +1,7 @@
 //TreeNode Class
 
+const { B } = require("./graph");
+
 class TreeNode {
     constructor(val) {
         this.val = val;
@@ -38,34 +40,16 @@ class BinarySearchTree {
     }
 }
 
-//Creating Nodes
+//Creating Binary Search Tree
 
-let one = new TreeNode('1'); //subtree / branch
-let two = new TreeNode('2'); //leaf
-let three = new TreeNode('3'); //subtree / branch
-let four = new TreeNode('4'); //subtree / branch
-let five = new TreeNode('5'); //leaf
-let six = new TreeNode('6'); //leaf
-let root = new TreeNode('7'); //root node
-let eight = new TreeNode('8'); //subtree / branch
-let nine = new TreeNode('9'); //leaf
-
-// Height: 4 ; Width: 4//
-
-//Creating Edges
-
-one.right = two;
-three.left = one;
-three.right = four;
-four.right = five;
-root.left = three;
-root.right = eight;
-eight.left= six;
-eight.right = nine;
-
-
-//Test Case
 bst = new BinarySearchTree();
+bst.insert(7);
+bst.insert(3);
+bst.insert(8);
+bst.insert(1);
+bst.insert(4);
+bst.insert(6);
+bst.insert(9);
 
 
 
