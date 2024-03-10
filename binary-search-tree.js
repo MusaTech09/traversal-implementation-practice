@@ -59,7 +59,25 @@ class BinarySearchTree {
             if(node.left) stack.push(node.left);
         }
     }
+
+    //Depth-First Search
+    dfs(target) {
+        let stack = [this.root];
+
+        while(stack.length)  {
+            let node = stack.pop();
+
+            if(node.val == target) return true;
+            else {
+                if(node.right) stack.push(node.right);
+                if(node.left) stack.push(node.left);
+            }
+        }
+        return false;
+    }
 }
+
+
 
 
 //Creating Binary Search Tree
@@ -84,4 +102,6 @@ bst.insert(9);
 
 //Test Cases
 
-bst.dft();
+// bst.dft();
+console.log(bst.dfs(8));
+console.log(bst.dfs(10));
