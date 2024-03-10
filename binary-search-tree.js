@@ -79,14 +79,14 @@ class BinarySearchTree {
 
     //Breadth-First Traversal
     bft() {
-        let queue = new Queue();
+        let queue = [this.root]
 
-        while(queue.size > 0) {
-            let node = queue.dequeue();
-            console.log(node);
+        while(queue.length) {
+            let node = queue.shift();
+            console.log(node.val);
 
-            queue.enqueue(node.left);
-            queue.enqueue(node.right);
+            if(node.left) queue.push(node.left);
+            if(node.right) queue.push(node.right);
         }
     }
 
@@ -118,7 +118,7 @@ bst.insert(9);
 
 //Test Cases
 
-bst.dft();
-console.log(bst.dfs(8));
-console.log(bst.dfs(10));
+// bst.dft();
+// console.log(bst.dfs(8));
+// console.log(bst.dfs(10));
 bst.bft();
