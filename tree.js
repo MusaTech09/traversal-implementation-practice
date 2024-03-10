@@ -17,7 +17,7 @@ let three = new TreeNode('3'); //subtree / branch
 let four = new TreeNode('4'); //subtree / branch
 let five = new TreeNode('5'); //leaf
 let six = new TreeNode('6'); //leaf
-let seven = new TreeNode('7'); //root node
+let root = new TreeNode('7'); //root node
 let eight = new TreeNode('8'); //subtree / branch
 let nine = new TreeNode('9'); //leaf
 
@@ -29,8 +29,8 @@ one.right = two;
 three.left = one;
 three.right = four;
 four.right = five;
-seven.left = three;
-seven.right = eight;
+root.left = three;
+root.right = eight;
 eight.left= six;
 eight.right = nine;
 
