@@ -32,14 +32,14 @@ class BinarySearchTree {
             if(!currNode.left) {
                 currNode.left = newNode;
             } else {
-                this.insert(val, currNode = currNode.left);
+                this.insert(val, currNode.left);
             }
         } else {
             //Add larger values to right
             if(!currNode.right) {
                 currNode.right = newNode;
             } else {
-                this.insert(val, currNode = currNode.right);
+                this.insert(val, currNode.right);
             }
         }
     }
@@ -58,7 +58,12 @@ bst.insert(6);
 bst.insert(9);
 
 //          7
-//      3
+//        /   \
+//       3     8
+//      / \     \
+//     1   4     9
+//          \
+//           6
 
 console.log(bst);
 console.log(bst.root.left);
