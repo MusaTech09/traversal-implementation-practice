@@ -33,8 +33,17 @@ const depthFirstTraversal = start => {
                 visited.add(`${node}`);
                 stack.push(node);
             }
-        })
+        });
     }
 
     return res;
 }
+
+//Test Cases
+
+console.log(depthFirstTraversal('A'));
+console.log(depthFirstTraversal('B'));
+console.log(depthFirstTraversal('C'));
+console.log(depthFirstTraversal('D'));
+console.log(depthFirstTraversal('E'));
+console.log(depthFirstTraversal('F'));
