@@ -91,6 +91,22 @@ class BinarySearchTree {
     }
 
     //Breadth-First Search
+    bfs(target) {
+        let queue = [this.root];
+
+        while(queue.length) {
+            let node = queue.shift();
+
+            if(node.val === target) return true;
+
+            else {
+                if(node.left) queue.push(node.left);
+                if(node.right) queue.push(node.right);
+            }
+        }
+
+        return false;
+    }
 }
 
 
@@ -118,7 +134,9 @@ bst.insert(9);
 
 //Test Cases
 
-// bst.dft();
-// console.log(bst.dfs(8));
-// console.log(bst.dfs(10));
+bst.dft();
+console.log(bst.dfs(8));
+console.log(bst.dfs(10));
 bst.bft();
+console.log(bst.bfs(7));
+console.log(bst.bfs(13));
