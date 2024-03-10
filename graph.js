@@ -85,18 +85,42 @@ const bft = start => {
 }
 
 //Breadth-First Serach
+const bfs = (start, target) => {
+    let queue = [start];
+    let visited = new Set([start]);
 
+    while(queue.length) {
+        let curr = queue.shift();
+
+        if(curr == target) return true;
+        else {
+            let neighbors = graph[curr];
+
+            neighbors.forEach(el => {
+                if(!visited.has(`${el}`)) {
+                    visited.add(`${el}`);
+                    queue.push(el);
+                }
+            })
+        }
+    }
+
+    return false;
+}
 
 
 //Test Cases
 
-// console.log(dft('A'));
-// console.log(dft('E'));
-// console.log(dft('F'));
+console.log(dft('A'));
+console.log(dft('E'));
+console.log(dft('F'));
 
-// console.log(dfs('A', 'D'));
-// console.log(dfs('B', 'F'));
+console.log(dfs('A', 'D'));
+console.log(dfs('B', 'F'));
 
 console.log(bft('A'))
 console.log(bft('E'))
 console.log(bft('F'))
+
+console.log(bfs('A', 'D'));
+console.log(bfs('E', 'H'));
