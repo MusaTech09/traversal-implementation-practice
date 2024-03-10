@@ -121,3 +121,4 @@ bst.insert(9);
 bst.dft();
 console.log(bst.dfs(8));
 console.log(bst.dfs(10));
+bst.bft();
