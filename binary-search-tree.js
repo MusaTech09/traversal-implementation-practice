@@ -67,7 +67,8 @@ class BinarySearchTree {
         while(stack.length)  {
             let node = stack.pop();
 
-            if(node.val == target) return true;
+            if(node.val === target) return true;
+
             else {
                 if(node.right) stack.push(node.right);
                 if(node.left) stack.push(node.left);
@@ -102,6 +103,6 @@ bst.insert(9);
 
 //Test Cases
 
-// bst.dft();
+bst.dft();
 console.log(bst.dfs(8));
 console.log(bst.dfs(10));
