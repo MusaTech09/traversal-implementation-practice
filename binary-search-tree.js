@@ -15,12 +15,25 @@ class BinarySearchTree {
         this.root = null;
     }
 
-    insert(val, currentNode = this.root) {
+    insert(val, currNode = this.root) {
         const newNode = new TreeNode(val);
 
+        //Set value as root for empty bst
         if(!this.root) {
             this.root = newNode;
             return;
+        }
+
+        //Add smaller values to left
+        if(val < currNode.val) {
+            if(!currNode.left) currNode.left = newNode;
+            else this.insert(val, currNode.left)
+        }
+
+        //Add larger values to right
+        if(val > currNode.val) {
+            if(!currNode.right) currNode.right = newNode;
+            else this.insert(val, currNode.right);
         }
     }
 }
@@ -49,6 +62,11 @@ root.left = three;
 root.right = eight;
 eight.left= six;
 eight.right = nine;
+
+
+//Test Case
+bst = new BinarySearchTree();
+
 
 
 module.exports = {
